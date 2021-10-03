@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/386529-remote_cooling_unit_condenser.wav-08d0fb79821e9ed889fa80a0039cd0ef.sample"
+
+[deps]
+
+source_file="res://Items/Sounds/386529-remote_cooling_unit_condenser.wav"
+dest_files=[ "res://.import/386529-remote_cooling_unit_condenser.wav-08d0fb79821e9ed889fa80a0039cd0ef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

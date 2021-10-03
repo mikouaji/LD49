@@ -1,0 +1,225 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Root.gd" type="Script" id=1]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://font.tres" type="DynamicFont" id=3]
+
+[node name="Root" type="Node"]
+script = ExtResource( 1 )
+SEED = "dsodsfysfsi76878"
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -60.0
+rect_min_size = Vector2( 1024, 60 )
+color = Color( 0, 0, 0, 0.313726 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/CenterContainer"]
+margin_left = 129.0
+margin_right = 895.0
+margin_bottom = 58.0
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="HUD/CenterContainer/HBoxContainer"]
+margin_right = 150.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/HBoxContainer/Left"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Plates left"
+align = 1
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/HBoxContainer/Left"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+
+[node name="Done" type="VBoxContainer" parent="HUD/CenterContainer/HBoxContainer"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/HBoxContainer/Done"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Plates collected"
+align = 1
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/HBoxContainer/Done"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+
+[node name="Destroyed" type="VBoxContainer" parent="HUD/CenterContainer/HBoxContainer"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/HBoxContainer/Destroyed"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Plates smashed"
+align = 1
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/HBoxContainer/Destroyed"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+
+[node name="Seed" type="VBoxContainer" parent="HUD/CenterContainer/HBoxContainer"]
+margin_left = 462.0
+margin_right = 612.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/HBoxContainer/Seed"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Seed"
+align = 1
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/HBoxContainer/Seed"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "LD49"
+align = 1
+
+[node name="Map" type="VBoxContainer" parent="HUD/CenterContainer/HBoxContainer"]
+margin_left = 616.0
+margin_right = 766.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/HBoxContainer/Map"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Map"
+align = 1
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/HBoxContainer/Map"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "SMALL"
+align = 1
+
+[node name="WIN" type="CenterContainer" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="HUD/WIN"]
+margin_left = 387.0
+margin_top = 219.0
+margin_right = 637.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 250, 150 )
+window_title = "There are no more plates!"
+
+[node name="Text" type="Label" parent="HUD/WIN/AcceptDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+custom_fonts/font = ExtResource( 3 )
+text = "CONGRATULATIONS???
+I hope more plates 
+are getting washed 
+than broken!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="CenterContainer" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Loading"]
+margin_left = 362.0
+margin_top = 270.0
+margin_right = 662.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 300, 60 )
+color = Color( 0, 0, 0, 0.313726 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Loading"]
+margin_left = 412.0
+margin_top = 274.0
+margin_right = 612.0
+margin_bottom = 325.0
+
+[node name="Text" type="Label" parent="HUD/Loading/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 3 )
+text = "Picking up plates..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="ProgressBar" parent="HUD/Loading/VBoxContainer"]
+margin_top = 31.0
+margin_right = 200.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 200, 20 )
+step = 1.0
+rounded = true
+percent_visible = false
+
+[node name="GUI" parent="." instance=ExtResource( 2 )]
+
+[connection signal="confirmed" from="HUD/WIN/AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
+[connection signal="play" from="GUI" to="." method="_onPlayPress"]

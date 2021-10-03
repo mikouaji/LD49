@@ -1,0 +1,176 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://splash.png" type="Texture" id=1]
+[ext_resource path="res://font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GUI.gd" type="Script" id=3]
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -300.0
+margin_right = 102.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_top = 207.0
+margin_right = 204.0
+margin_bottom = 392.0
+alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_right = 204.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+text = "Play"
+
+[node name="Seed" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 37.0
+margin_right = 204.0
+margin_bottom = 74.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Seed"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level seed:"
+align = 2
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer/Seed"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "LD49"
+align = 1
+max_length = 8
+expand_to_text_length = true
+
+[node name="Level" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 78.0
+margin_right = 204.0
+margin_bottom = 111.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Level"]
+margin_left = 43.0
+margin_top = 3.0
+margin_right = 128.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Map size:"
+align = 2
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/VBoxContainer/Level"]
+margin_left = 132.0
+margin_right = 161.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+
+[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 115.0
+margin_right = 204.0
+margin_bottom = 148.0
+custom_fonts/font = ExtResource( 2 )
+text = "Controls"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 204.0
+margin_bottom = 185.0
+custom_fonts/font = ExtResource( 2 )
+text = "Exit"
+
+[node name="Controls" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keys" type="AcceptDialog" parent="Controls"]
+margin_left = 332.0
+margin_top = 144.0
+margin_right = 692.0
+margin_bottom = 455.0
+rect_min_size = Vector2( 360, 300 )
+window_title = "Keys"
+
+[node name="Text" type="Label" parent="Controls/Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+custom_fonts/font = ExtResource( 2 )
+text = "MOVEMENT:
+WASD or ARROW KEYS
+MOVE MOUSE to SPIN and LOOK
+MINI MAP:
+TAB or LEFT MOUSE BUTTON
+SLOW WALK:
+SHIFT or RIGHT MOUSE BUTTON
+MENU:
+ESC"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gameplay" type="AcceptDialog" parent="Controls"]
+margin_left = 332.0
+margin_top = 150.0
+margin_right = 692.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 360, 300 )
+window_title = "Gameplay"
+
+[node name="Text" type="Label" parent="Controls/Gameplay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+custom_fonts/font = ExtResource( 2 )
+text = "
+TO PICK UP DISHES
+STAND NEAR A FULL TABLE
+
+TRY TO BRING BACK
+ALL DISHES WITHOUT BREAKING
+
+HAVE FUN :)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="confirmed" from="Controls/Keys" to="." method="_on_AcceptDialog_confirmed"]
+[connection signal="confirmed" from="Controls/Gameplay" to="." method="_on_Gameplay_confirmed"]
