@@ -58,7 +58,7 @@ func _onPlayPress(_seed, _level):
 		player.connect("pick_up", self, "__showPickup")
 	player.init(RNG)
 	player.rotation.y += 180
-	player.resetPosition(level.startRoomCoords + Vector3(4,1,4))
+	player.resetPosition(level.startRoomCoords + Vector3.ONE)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$HUD/CenterContainer/HBoxContainer/Seed/Value.text = SEED
 	var mapText = "TINY"

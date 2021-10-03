@@ -29,6 +29,6 @@ func _on_Gameplay_confirmed():
 
 signal play
 func _on_Play_pressed():
-	var _seed = $CenterContainer/VBoxContainer/Seed/Label.text
+	var _seed = $CenterContainer/VBoxContainer/Seed/LineEdit.text
 	var _map = $CenterContainer/VBoxContainer/Level/OptionButton.selected
 	emit_signal("play", _seed, _map)
